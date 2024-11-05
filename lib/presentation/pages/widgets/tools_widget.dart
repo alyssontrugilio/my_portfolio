@@ -46,10 +46,14 @@ class ToolsWidget extends StatelessWidget {
           ),
           SizedBox(width: 15),
           IconTechWidget(
+            icon: AppAssets.typeScript,
+            title: 'TypeScript',
+          ),
+          SizedBox(width: 15),
+          IconTechWidget(
             icon: AppAssets.react,
             title: 'React',
           ),
-          SizedBox(width: 15),
         ],
       ),
     );

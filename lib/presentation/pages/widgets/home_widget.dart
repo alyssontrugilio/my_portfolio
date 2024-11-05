@@ -10,8 +10,8 @@ class HomeWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(
+    return const Padding(
+      padding: EdgeInsets.only(
         left: 94,
         right: 94,
         top: 252,
@@ -26,31 +26,21 @@ class HomeWidget extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const _MyInfoWidget(),
-                  const SizedBox(width: 78),
+                  _MyInfoWidget(),
+                  SizedBox(width: 78),
                   CircleAvatar(
                     radius: 200,
                     backgroundColor: Colors.grey,
-                    child: ClipOval(
-                      child: Image.network(
-                        'https://avatars.githubusercontent.com/u/106694351?v=4',
-                        fit: BoxFit.cover,
-                        errorBuilder: (context, error, stackTrace) {
-                          return const Icon(
-                            Icons.error,
-                            size: 200,
-                            color: Colors.redAccent,
-                          );
-                        },
-                      ),
+                    backgroundImage: NetworkImage(
+                      'https://avatars.githubusercontent.com/u/106694351?v=4',
                     ),
                   ),
                 ],
               ),
-              const SizedBox(
+              SizedBox(
                 height: 109,
               ),
-              const Column(
+              Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
@@ -96,6 +86,23 @@ class _MyInfoWidget extends StatelessWidget {
               fontSize: 14,
               fontWeight: FontWeight.w500,
             ),
+          ),
+          const SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              const Icon(
+                Icons.location_on_sharp,
+                color: Color(0xff9C9C9C),
+              ),
+              const SizedBox(width: 2),
+              Text(
+                'Maringá, Paraná',
+                style: GoogleFonts.ibmPlexMono(
+                  color: const Color(0xff9C9C9C),
+                ),
+              )
+            ],
           ),
           const SizedBox(
             height: 30,
