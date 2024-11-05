@@ -14,7 +14,7 @@ class HomeWidget extends StatelessWidget {
       padding: const EdgeInsets.only(
         left: 94,
         right: 94,
-        top: 152,
+        top: 252,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -33,8 +33,7 @@ class HomeWidget extends StatelessWidget {
                     backgroundColor: Colors.grey,
                     child: ClipOval(
                       child: Image.network(
-                        // 'https://avatars.githubusercontent.com/u/106694351?v=4',
-                        '',
+                        'https://avatars.githubusercontent.com/u/106694351?v=4',
                         fit: BoxFit.cover,
                         errorBuilder: (context, error, stackTrace) {
                           return const Icon(
