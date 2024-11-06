@@ -10,4 +10,7 @@ class AppAssets {
   static const postman = 'assets/svg/postman.svg';
   static const react = 'assets/svg/react.svg';
   static const typeScript = 'assets/svg/typescript.svg';
+  static const treeunfe = 'assets/svg/treeunfe.svg';
+  //PNG
+  static const skyGroup = 'assets/svg/skygroup.png';
 }

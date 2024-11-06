@@ -14,7 +14,7 @@ class HomeWidget extends StatelessWidget {
       padding: EdgeInsets.only(
         left: 94,
         right: 94,
-        top: 252,
+        top: 300,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +38,7 @@ class HomeWidget extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 109,
+                height: 200,
               ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +65,7 @@ class _MyInfoWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: 492,
+      width: 692,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

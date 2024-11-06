@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:my_portfolio/presentation/pages/experience_widget.dart';
 
 import 'widgets/widgets.dart';
 
@@ -12,9 +15,16 @@ class HomePage extends StatelessWidget {
       body: Stack(
         children: [
           SingleChildScrollView(
-            child: Column(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                HomeWidget(),
+                Column(
+                  children: [
+                    HomeWidget(),
+                    SizedBox(height: 80),
+                    ExperienceWidget(),
+                  ],
+                ),
               ],
             ),
           ),
