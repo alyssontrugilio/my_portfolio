@@ -1,41 +1,52 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:my_portfolio/presentation/pages/experience_widget.dart';
 
-import 'widgets/widgets.dart';
+import '../widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color(0xFF252525),
-      body: Stack(
-        children: [
-          SingleChildScrollView(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Column(
-                  children: [
-                    HomeWidget(),
-                    SizedBox(height: 80),
-                    ExperienceWidget(),
-                  ],
-                ),
-              ],
-            ),
-          ),
-          Column(
-            children: [
-              Center(
-                child: MenuHeaderWidget(),
+    return Scaffold(
+      endDrawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: const <Widget>[
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
               ),
-            ],
-          ),
-        ],
+              child: Text(
+                'Menu',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                ),
+              ),
+            ),
+            ListTile(
+              title: Text('About'),
+            ),
+            ListTile(
+              title: Text('Work'),
+            ),
+            ListTile(
+              title: Text('Testimonials'),
+            ),
+            ListTile(
+              title: Text('Contact'),
+            ),
+          ],
+        ),
+      ),
+      body: const SingleChildScrollView(
+        child: Column(
+          children: [
+            HeaderWidget(),
+            BodyWidget(),
+            FooterWidget(),
+          ],
+        ),
       ),
     );
   }
