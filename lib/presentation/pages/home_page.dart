@@ -8,45 +8,22 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      endDrawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
-          children: const <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text(
-                'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+      body: LayoutBuilder(
+        builder: (context, constraints) {
+          return const Column(
+            mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              HeaderWidget(),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: BodyWidget(),
                 ),
               ),
-            ),
-            ListTile(
-              title: Text('About'),
-            ),
-            ListTile(
-              title: Text('Work'),
-            ),
-            ListTile(
-              title: Text('Testimonials'),
-            ),
-            ListTile(
-              title: Text('Contact'),
-            ),
-          ],
-        ),
-      ),
-      body: const SingleChildScrollView(
-        child: Column(
-          children: [
-            HeaderWidget(),
-            BodyWidget(),
-            FooterWidget(),
-          ],
-        ),
+              FooterWidget(),
+            ],
+          );
+        },
       ),
     );
   }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../core/core.dart';
+
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
     super.key,
@@ -7,10 +9,11 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Container(
       height: 68,
       width: double.infinity,
-      color: Colors.black,
+      color: isDarkTheme ? AppColors.grayDark[50] : AppColors.grayLight[50],
       child: Center(
         child: ConstrainedBox(
           constraints: const BoxConstraints(maxWidth: 1920),
