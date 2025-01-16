@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/core.dart';
+
 class LogoTextWidget extends StatelessWidget {
   const LogoTextWidget({
     super.key,
@@ -14,7 +16,9 @@ class LogoTextWidget extends StatelessWidget {
         style: GoogleFonts.inter(
           fontSize: 30,
           fontWeight: FontWeight.bold,
-          color: const Color(0xff111827),
+          color: Theme.of(context).brightness == Brightness.dark
+              ? AppColors.grayDark[900]
+              : AppColors.grayLight[900],
         ),
       ),
     );

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/core.dart';
+
 class OptionHeaderWidget extends StatelessWidget {
   final String text;
   const OptionHeaderWidget({
@@ -22,13 +24,15 @@ class OptionHeaderWidget extends StatelessWidget {
                 style: GoogleFonts.inter(
                   fontSize: constraints.maxWidth < 900 ? 20 : 16,
                   fontWeight: FontWeight.w500,
-                  color: const Color(0xff4B5563),
+                  color: Theme.of(context).brightness == Brightness.dark
+                      ? AppColors.grayDark[600]
+                      : AppColors.grayLight[600],
                 ),
               ),
             ),
           ),
           const SizedBox(
-            width: 24,
+            width: 20,
           )
         ],
       ),

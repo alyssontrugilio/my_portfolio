@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+import '../../../core/core.dart';
+
 class DownloadButtonWidget extends StatelessWidget {
   final bool isMobile;
   const DownloadButtonWidget({
@@ -10,15 +12,17 @@ class DownloadButtonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return SizedBox(
       height: isMobile ? 50 : 36,
       child: FilledButton(
         onPressed: () {},
-        style: const ButtonStyle(
-          backgroundColor: MaterialStatePropertyAll(Color(0xff111827)),
-          shape: MaterialStatePropertyAll(
+        style: ButtonStyle(
+          backgroundColor: MaterialStatePropertyAll(
+              isDarkTheme ? AppColors.grayDark[900] : AppColors.grayLight[900]),
+          shape: const MaterialStatePropertyAll(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(15)),
+              borderRadius: BorderRadius.all(Radius.circular(12)),
             ),
           ),
         ),
@@ -27,6 +31,8 @@ class DownloadButtonWidget extends StatelessWidget {
           style: GoogleFonts.inter(
             fontSize: isMobile ? 20 : 16,
             fontWeight: FontWeight.w500,
+            color:
+                isDarkTheme ? AppColors.grayDark[50] : AppColors.grayLight[50],
           ),
         ),
       ),
